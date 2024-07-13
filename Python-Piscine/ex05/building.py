@@ -3,6 +3,7 @@ import string
 
 
 def count_uppercase(text):
+    """Counts the number of uppercase letters in the text."""
     count = 0
     for char in text:
         if char.isupper():
@@ -11,6 +12,7 @@ def count_uppercase(text):
 
 
 def count_lowercase(text):
+    """Counts the number of lowercase letters in the text."""
     count = 0
     for char in text:
         if char.islower():
@@ -19,6 +21,7 @@ def count_lowercase(text):
 
 
 def count_punctuation(text):
+    """Counts the number of punctuation marks in the text."""
     count = 0
     for char in text:
         if char in string.punctuation:
@@ -27,6 +30,7 @@ def count_punctuation(text):
 
 
 def count_digits(text):
+    """Counts the number of digits in the text."""
     count = 0
     for char in text:
         if char.isdigit():
@@ -35,6 +39,7 @@ def count_digits(text):
 
 
 def count_spaces(text):
+    """Counts the number of spaces in the text."""
     count = 0
     for char in text:
         if char.isspace():
@@ -43,6 +48,8 @@ def count_spaces(text):
 
 
 def analyze_text(text):
+    """Analyzes the text and returns the counts
+    of different character types."""
     num_uppercase = count_uppercase(text)
     num_lowercase = count_lowercase(text)
     num_punctuation = count_punctuation(text)
