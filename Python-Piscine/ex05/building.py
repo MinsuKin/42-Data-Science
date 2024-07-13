@@ -3,32 +3,46 @@ import string
 
 
 def count_uppercase(text):
-    """Counts the number of uppercase letters in the text."""
-    return sum(1 for char in text if char.isupper())
+    count = 0
+    for char in text:
+        if char.isupper():
+            count += 1
+    return count
 
 
 def count_lowercase(text):
-    """Counts the number of lowercase letters in the text."""
-    return sum(1 for char in text if char.islower())
+    count = 0
+    for char in text:
+        if char.islower():
+            count += 1
+    return count
 
 
 def count_punctuation(text):
-    """Counts the number of punctuation marks in the text."""
-    return sum(1 for char in text if char in string.punctuation)
+    count = 0
+    for char in text:
+        if char in string.punctuation:
+            count += 1
+    return count
 
 
 def count_digits(text):
-    """Counts the number of digits in the text."""
-    return sum(1 for char in text if char.isdigit())
+    count = 0
+    for char in text:
+        if char.isdigit():
+            count += 1
+    return count
 
 
 def count_spaces(text):
-    """Counts the number of spaces in the text."""
-    return sum(1 for char in text if char.isspace())
+    count = 0
+    for char in text:
+        if char.isspace():
+            count += 1
+    return count
 
 
 def analyze_text(text):
-    """Analyzes the text and returns the counts of different character types."""
     num_uppercase = count_uppercase(text)
     num_lowercase = count_lowercase(text)
     num_punctuation = count_punctuation(text)
@@ -46,7 +60,6 @@ def analyze_text(text):
 
 
 def main():
-    """Main function to handle input and output."""
     if len(sys.argv) == 1:
         text = input("What is the text to count?\n")
     elif len(sys.argv) == 2:
