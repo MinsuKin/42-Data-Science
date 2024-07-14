@@ -1,5 +1,6 @@
 import sys
 
+
 def main():
     if len(sys.argv) < 2:
         return
@@ -16,6 +17,7 @@ def main():
         print("I'm Even.")
     else:
         print("I'm Odd.")
+
 
 if __name__ == "__main__":
     try:

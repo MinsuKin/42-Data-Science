@@ -2,7 +2,7 @@ import sys
 from ft_filter import ft_filter
 
 
-def LenAndAlnumFilter(text, size):
+def size_filter(text, size):
     """Filter words in text that are longer than size and
     contain only alphanumeric characters."""
     for word in text.split():
@@ -23,7 +23,7 @@ def main():
     else:
         raise AssertionError("the arguments are bad")
 
-    filtered_text = LenAndAlnumFilter(text, size)
+    filtered_text = size_filter(text, size)
 
     print(filtered_text)
 
