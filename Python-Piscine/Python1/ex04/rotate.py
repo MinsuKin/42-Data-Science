@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
-from load_image import ft_load, convert_to_grayscale
+import numpy
+
+from load_image import ft_load
 
 
 def zoom_image(image_array):
@@ -17,7 +19,7 @@ def zoom_image(image_array):
     end_x, end_y = start_x + new_width, start_y + new_height
 
     zoomed_image = image_array[start_y:end_y, start_x:end_x]
-    print(f"New shape after slicing: {zoomed_image.shape}")
+    print(f"The shape of image is: {zoomed_image.shape}")
     print(zoomed_image)
 
     return zoomed_image
@@ -31,13 +33,29 @@ def display_image(image_array):
     plt.show()
 
 
+def transpose(image_array):
+    """Rotate the image 90 degrees to the left."""
+
+    rows, cols = image_array.shape
+    transposed = numpy.zeros((cols, rows))
+
+    for i in range(rows):
+        for j in range(cols):
+            transposed[j, i] = image_array[i, j]
+
+    print(f"New shape after Transpose: {transposed.shape}")
+    print(transposed)
+
+    return transposed
+
+
 def main():
     img_array = ft_load("animal.jpeg")
-    img_array = convert_to_grayscale(img_array)
 
     if img_array is not None:
         zoomed_img = zoom_image(img_array)
-        display_image(zoomed_img)
+        rotated_img = transpose(zoomed_img)
+        display_image(rotated_img)
 
 
 if __name__ == "__main__":
