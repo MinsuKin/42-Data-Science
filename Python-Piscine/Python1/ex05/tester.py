@@ -11,11 +11,11 @@ from pimp_image import ft_grey
 def main():
     array = ft_load("landscape.jpg")
 
-    # image_array = ft_invert(array)
+    image_array = ft_invert(array)
     # image_array = ft_red(array)
     # image_array = ft_green(array)
     # image_array = ft_blue(array)
-    image_array = ft_grey(array)
+    # image_array = ft_grey(array)
 
     print(ft_invert.__doc__)
 
