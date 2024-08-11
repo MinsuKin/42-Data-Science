@@ -2,6 +2,7 @@ import pandas as pd
 
 
 def load(path: str) -> pd.DataFrame:
+    """This function takes a path to a csv file and returns a pandas DataFrame."""
     data = pd.read_csv(path)
     print(f"Loading dataset of dimensions ({data.shape[0]}, {data.shape[1]})")
     return data
