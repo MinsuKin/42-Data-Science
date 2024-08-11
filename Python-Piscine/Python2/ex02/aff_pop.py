@@ -24,20 +24,20 @@ def parse_population(population_str):
 
 
 def compare_population(country1, country2):
-    """Draws a line graph of the population of two countries over the years."""
+    """Shows a graph of the population of two countries over the years."""
     data = load('population_total.csv')
     country1_data = data[data['country'] == country1]
     country2_data = data[data['country'] == country2]
 
     years = country1_data.columns[1:-50].astype(int)
-    country1_population = country1_data.values[0][1:-50]
-    country2_population = country2_data.values[0][1:-50]
+    country1_pop = country1_data.values[0][1:-50]
+    country2_pop = country2_data.values[0][1:-50]
 
-    country1_population = [parse_population(str(pop)) for pop in country1_population]
-    country2_population = [parse_population(str(pop)) for pop in country2_population]
+    country1_pop = [parse_population(str(pop)) for pop in country1_pop]
+    country2_pop = [parse_population(str(pop)) for pop in country2_pop]
 
-    plt.plot(years, country1_population, linestyle='-', color='b')
-    plt.plot(years, country2_population, linestyle='-', color='g')
+    plt.plot(years, country1_pop, linestyle='-', color='b')
+    plt.plot(years, country2_pop, linestyle='-', color='g')
 
     plt.title('Population Projections')
     plt.xlabel('Year')

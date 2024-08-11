@@ -1,12 +1,13 @@
 import matplotlib.pyplot as plt
-import numpy as np
 from load_csv import load
 
 
 def gdp_to_life_expectancy(year):
 
     life_data = load('life_expectancy_years.csv')
-    gdp_data = load('income_per_person_gdppercapita_ppp_inflation_adjusted.csv')
+    gdp_data = (
+        load('income_per_person_gdppercapita_ppp_inflation_adjusted.csv')
+    )
 
     life_data_year = life_data[year]
     gdp_data_year = gdp_data[year]

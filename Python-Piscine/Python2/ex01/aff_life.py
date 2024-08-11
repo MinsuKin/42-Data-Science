@@ -3,7 +3,7 @@ from load_csv import load
 
 
 def draw_country_life_expectancy(country_name):
-    """Draws a line graph of the life expectancy of a country over the years."""
+    """Shows a graph of the life expectancy of a country over the years."""
 
     data = load('life_expectancy_years.csv')
     country_data = data[data['country'] == country_name]
